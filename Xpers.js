@@ -146,23 +146,24 @@
    // View Layer
 
 
-     function renderList(arrofList) {
-          const allExpenseHTML = arrofList.map(expense => createListItem(expense));
-          const joinedAllExpenseHTML = allExpenseHTML.join("");
-          expenseTableEl.innerHTML = joinedAllExpenseHTML;
-         }
-           function createListItem({ desc, amount, moment }) {
+            function renderList(arrofList) {
+                 const allExpenseHTML = arrofList.map(expense => createListItem(expense));
+                 const joinedAllExpenseHTML = allExpenseHTML.join("");
+                 expenseTableEl.innerHTML = joinedAllExpenseHTML;
+              }
+
+            function createListItem({ desc, amount, moment }) {
             return `
              <li class="list-group-item d-flex justify-content-between">
-							<div class="d-flex flex-column">
-                                    ${desc}
-								<small class="text-muted">${getDateString(moment)}</small>
-							</div>
-							<div>
+					      <div class="d-flex flex-column">
+                                                           ${desc}
+							<small class="text-muted">${getDateString(moment)}</small>
+						</div>
+					<div>
 								<span class="px-5">
-                                        ${amount}
+                                                                   ${amount}
 								</span>
-							<button
+			     <button
                                  type="button"
                                  class="btn btn-outline-danger btn-sm"
                                  onclick="deleteItem(${moment.valueOf()})"
